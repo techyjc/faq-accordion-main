@@ -9,8 +9,12 @@ questionbtn.forEach(qbtn => {
         var qst_target = e.target.getAttribute("aria-controls");
         var qst_element = document.getElementById(qst_target);
         var btn_target = e.target;    
-        close_accordion();
-        qst_element.setAttribute('aria-expanded', 'true');
+        if(qst_element.getAttribute('aria-expanded') == 'false'){
+            qst_element.setAttribute('aria-expanded', 'true');
+        }else{
+            qst_element.setAttribute('aria-expanded', 'false');
+            close_accordion();
+        }
         toggle_btnicon(btn_target.nextElementSibling,qst_element.getAttribute('aria-expanded'))
     });
 })
@@ -19,8 +23,12 @@ actionbtn.forEach(btn => {
     btn.addEventListener('click', (e) => {
         var ans_target = e.target.getAttribute("aria-controls");
         var ans_element = document.getElementById(ans_target);
-        close_accordion();
-        ans_element.setAttribute('aria-expanded', 'true');
+        if(ans_element.getAttribute('aria-expanded') == 'false'){
+            ans_element.setAttribute('aria-expanded', 'true');
+        }else{
+            ans_element.setAttribute('aria-expanded', 'false');
+            close_accordion();
+        }
         toggle_btnicon(btn,ans_element.getAttribute('aria-expanded'))
     });
 })
