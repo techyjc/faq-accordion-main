@@ -26,7 +26,8 @@ html {
 body {
     font-family: var(--ff);
     margin: 0px;
-   
+    position: relative;
+    overflow: hidden;
 }
 
 /* .grid {
