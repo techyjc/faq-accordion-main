@@ -14,6 +14,7 @@ questionbtn.forEach(qbtn => {
             qst_element.setAttribute('aria-expanded', 'true');
             
         }else{
+            close_accordion();
             qst_element.setAttribute('aria-expanded', 'false');
         }
         toggle_btnicon(btn_target.nextElementSibling,qst_element.getAttribute('aria-expanded'))
@@ -28,6 +29,7 @@ actionbtn.forEach(btn => {
             close_accordion();
             ans_element.setAttribute('aria-expanded', 'true');
         }else{
+            close_accordion();
             ans_element.setAttribute('aria-expanded', 'false');
         }
         toggle_btnicon(btn,ans_element.getAttribute('aria-expanded'))
