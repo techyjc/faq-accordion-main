@@ -10,10 +10,11 @@ questionbtn.forEach(qbtn => {
         var qst_element = document.getElementById(qst_target);
         var btn_target = e.target;    
         if(qst_element.getAttribute('aria-expanded') == 'false'){
+            close_accordion();
             qst_element.setAttribute('aria-expanded', 'true');
+            
         }else{
             qst_element.setAttribute('aria-expanded', 'false');
-            close_accordion();
         }
         toggle_btnicon(btn_target.nextElementSibling,qst_element.getAttribute('aria-expanded'))
     });
@@ -24,10 +25,10 @@ actionbtn.forEach(btn => {
         var ans_target = e.target.getAttribute("aria-controls");
         var ans_element = document.getElementById(ans_target);
         if(ans_element.getAttribute('aria-expanded') == 'false'){
+            close_accordion();
             ans_element.setAttribute('aria-expanded', 'true');
         }else{
             ans_element.setAttribute('aria-expanded', 'false');
-            close_accordion();
         }
         toggle_btnicon(btn,ans_element.getAttribute('aria-expanded'))
     });
