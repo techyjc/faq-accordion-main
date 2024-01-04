@@ -30,12 +30,6 @@ body {
     overflow: hidden;
 }
 
-/* .grid {
-    align-items: center;
-    display: grid;
-    justify-content: center;
-} */
-
 .bg-mobile {
     align-items: start;
     background: var(--color-200) url("../assets/images/background-pattern-mobile.svg");
@@ -91,6 +85,12 @@ body {
 .faq-question {
     font-size: 1rem;
     font-weight: var(--ff-600);
+    cursor: pointer; 
+}
+
+
+.faq-question:hover, .faq-question:focus-visible {
+    color: var(--color-300);   
 }
 
 .faq-answer {
@@ -121,12 +121,14 @@ body {
     cursor: pointer;  
 }
 
-.action-btn:hover .action-btn:focus-visible {
-    cursor: pointer;   
-}
 
 .minus {
     background: url("../assets/images/icon-minus.svg");
+}
+
+
+.action-btn:hover, .action-btn:focus-visible {
+    cursor: pointer;   
 }
 
 @media screen and (min-width: 650px) {
