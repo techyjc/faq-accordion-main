@@ -1,0 +1,145 @@
+:root {
+    --ff: 'Work Sans', sans-serif;
+    --ff-400: 400;
+    --ff-600: 600;
+    --ff-700: 700;
+
+    --mobile-width: 375px;
+    --desktop-width: 1440px;
+
+    --color-100: hsl(0, 0%, 100%);
+    --color-200: hsl(275, 100%, 97%);
+    --color-300: hsl(292, 16%, 49%);
+    --color-400: hsl(292, 42%, 14%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+     min-height: 100vh;
+}
+
+body {
+    font-family: var(--ff);
+    margin: 0px;
+   
+}
+
+/* .grid {
+    align-items: center;
+    display: grid;
+    justify-content: center;
+} */
+
+.bg-mobile {
+    align-items: start;
+    background: var(--color-200) url("../assets/images/background-pattern-mobile.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: grid;
+    gap: 1rem;
+    justify-content: center;
+    height: 100vh;
+}
+
+.accordion-wrapper {
+    background-color: var(--color-100);
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    margin: 0px 1.5rem;
+    margin-top: clamp(17rem, 12vw ,22rem);
+}
+
+.accordion-header {
+    align-items: center;
+    color: var(--color-400);
+    display: grid;
+    font-size: 1rem;
+    font-family: var(--ff-400);
+    gap: 1rem;
+    grid-template-columns: 40px 1fr;
+    grid-row: 20% 50%;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.accordion-star {
+    display: inline-block;
+    width: 25px;
+}
+
+.faq-action-section:not(:last-of-type) {
+    display: grid;
+    grid-template-columns: 1fr 30px ;
+    gap: 1rem;
+    margin: 1.5rem 0px .5rem 0px;
+}
+
+.faq-heading {
+    margin: 0px;
+}
+
+.faq-question {
+    font-size: 1rem;
+    font-weight: var(--ff-600);
+}
+
+.faq-answer {
+    border-bottom: 1px solid var(--color-200);
+    color: var(--color-300);
+    line-height: 1.4;
+    overflow: hidden;
+    transform: scale(1 , 0);
+    transform-origin: top;
+    height: 0px;
+    opacity: 0;
+}
+
+[aria-expanded="true"] {
+    height: auto;
+    transform: scale(1 , 1);
+    opacity: 1;
+    transition: transform 100ms, opacity 150ms 10ms linear;
+}
+
+.action-btn {
+    aspect-ratio: 1 / 1;
+    background: url("../assets/images/icon-plus.svg");
+    background-position: top left;
+    background-repeat: no-repeat;
+    width: 30px;
+}
+
+.minus {
+    background: url("../assets/images/icon-minus.svg");
+}
+
+@media screen and (min-width: 650px) {
+    .bg-desktop {
+        align-items: flex-start;
+        background: var(--color-200) url("../assets/images/background-pattern-desktop.svg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        display: grid;
+        justify-content: center;
+        /* min-height: 100vh; */
+    }
+
+    .accordion-wrapper {
+        max-width: 800px;
+    }
+
+    .accordion-header {
+        font-size: 1.5rem;
+        font-family: var(--ff-400);
+    }
+    
+    .accordion-star {
+        display: inline-block;
+        width: 35px;
+    }
+}
