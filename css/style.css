@@ -104,7 +104,7 @@ body {
     height: auto;
     transform: scale(1 , 1);
     opacity: 1;
-    transition: transform 100ms, opacity 150ms 10ms linear;
+    transition: transform 150ms, opacity 120ms 10ms linear;
 }
 
 .action-btn {
@@ -113,6 +113,11 @@ body {
     background-position: top left;
     background-repeat: no-repeat;
     width: 30px;
+    cursor: pointer;  
+}
+
+.action-btn:hover .action-btn:focus-visible {
+    cursor: pointer;   
 }
 
 .minus {
